@@ -10,8 +10,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val awtyApp = (application as AWTYApp)
+        val pokingTheBearManager = awtyApp.pokingTheBearManager
+
         btnStart.setOnClickListener {
-            (application as AWTYApp).pokingTheBearManager.startAnnoyingTheHeckOuttaPerson()
+            pokingTheBearManager.startAnnoyingTheHeckOuttaPerson()
+        }
+
+        btnPostNotification.setOnClickListener {
+            awtyApp.awtyNotificationManager.postItNote()
         }
     }
 }
